@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4908811375106562}
   - component: {fileID: 114883164655106820}
+  - component: {fileID: 114719598074501840}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -648,6 +649,17 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &114719598074501840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1014396864180122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f092b3091f140a680005f05c8cd335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114883164655106820
 MonoBehaviour:
   m_ObjectHideFlags: 1
