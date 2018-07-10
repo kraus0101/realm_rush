@@ -21,7 +21,7 @@ public class CubeEditor : MonoBehaviour
         SnapToGrid();
         UpdateLabel();
 
-            }
+     }
 
     private void SnapToGrid() {
        
@@ -40,5 +40,9 @@ public class CubeEditor : MonoBehaviour
         textMesh.text = labelText;
         gameObject.name = labelText;
 
+    }
+
+    void SetTopColor() {
+        print(transform.Find("Top"));
     }
 }
