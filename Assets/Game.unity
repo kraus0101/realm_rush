@@ -362,6 +362,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4908811375106562, guid: 7b3e1582f14c142ee9753afe0b0afd54,
     type: 2}
   m_PrefabInternal: {fileID: 913023271}
+--- !u!114 &1356733699 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114719598074501840, guid: 7b3e1582f14c142ee9753afe0b0afd54,
+    type: 2}
+  m_PrefabInternal: {fileID: 1842790864}
+  m_Script: {fileID: 11500000, guid: 94f092b3091f140a680005f05c8cd335, type: 3}
 --- !u!1 &1514132458
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startWaypoint: {fileID: 1576319629}
-  endWaypoint: {fileID: 1576319629}
+  endWaypoint: {fileID: 1356733699}
   isRunning: 1
 --- !u!1 &1906458389
 GameObject:

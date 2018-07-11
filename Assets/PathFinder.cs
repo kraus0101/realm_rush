@@ -18,18 +18,20 @@ public class PathFinder : MonoBehaviour {
         LoadBlocks();
         ColorStartAndEnd();
         PathFind();
-        //ExplorerNeighbor();
 	}
 
     private void PathFind()
     {
         queue.Enqueue(startWaypoint);
-        while (queue.Count>0)
+        while (queue.Count>0 && isRunning == true)
         {
             var searchCenter = queue.Dequeue();
-            print("Center searched from:" + searchCenter);//todo remove log
+            print("Searching from:" + searchCenter);//todo remove log
             HaltInEndFound(searchCenter);
+            ExplorerNeighbor(searchCenter);
+            searchCenter.isExplored = true;
         }
+        //todo work out path!
         print("Finished Pathfinding?");
     }
 
@@ -38,23 +40,38 @@ public class PathFinder : MonoBehaviour {
         if (searchCenter == endWaypoint)
         {
             print("Searching from end noded, therefore stopping");//todo remove log
+            isRunning = false;
         }
-        isRunning = false;
     }
 
-    private void ExplorerNeighbor()
+    private void ExplorerNeighbor(Waypoint from)
     {
+        if (!isRunning) { return; }
         foreach (Vector2Int direction in directions)
         {
-            Vector2Int explorationCoordinates = startWaypoint.GetGridPos() + direction;
-            print("Exploring X, Y: " + explorationCoordinates);
+            Vector2Int neighborCoordinates = from.GetGridPos() + direction;
             try
             {
-                grid[explorationCoordinates].SetTopColor(Color.black);
+                QueNewNeighbors(neighborCoordinates);
             }
             catch {
                 //do nothing
             }
+        }
+    }
+
+    private void QueNewNeighbors(Vector2Int neighborCoordinates)
+    {
+        Waypoint neighbor = grid[neighborCoordinates];
+        if (neighbor.isExplored)
+        {   
+            //do nothing
+        }
+        else{
+            neighbor.SetTopColor(Color.black);
+            queue.Enqueue(neighbor);
+            print("Queuing" + neighbor);
+            neighbor.isExplored = true;
         }
     }
 
