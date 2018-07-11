@@ -5,17 +5,42 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour {
 
-    [SerializeField] Waypoint startWaypoint, endWaypoint;
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
-    Vector2Int[] directions = { Vector2Int.right, Vector2Int.up, Vector2Int.left, Vector2Int.down };
+    Queue<Waypoint> queue = new Queue<Waypoint>();
+
+    [SerializeField] Waypoint startWaypoint, endWaypoint;
+    Vector2Int[] directions = { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
+    [SerializeField] bool isRunning = true; //todo private later
 	
     // Use this for initialization
 	void Start () {
         
         LoadBlocks();
         ColorStartAndEnd();
-        ExplorerNeighbor();
+        PathFind();
+        //ExplorerNeighbor();
 	}
+
+    private void PathFind()
+    {
+        queue.Enqueue(startWaypoint);
+        while (queue.Count>0)
+        {
+            var searchCenter = queue.Dequeue();
+            print("Center searched from:" + searchCenter);//todo remove log
+            HaltInEndFound(searchCenter);
+        }
+        print("Finished Pathfinding?");
+    }
+
+    private void HaltInEndFound(Waypoint searchCenter)
+    {
+        if (searchCenter == endWaypoint)
+        {
+            print("Searching from end noded, therefore stopping");//todo remove log
+        }
+        isRunning = false;
+    }
 
     private void ExplorerNeighbor()
     {
