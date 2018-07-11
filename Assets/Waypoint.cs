@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour {
 
+    //public ok here as is a data class
     public bool isExplored = false;
+    public Waypoint exploredFrom;
+
     Vector2Int girdPos;
 
     const int gridSize = 10;
@@ -14,6 +17,9 @@ public class Waypoint : MonoBehaviour {
         
         return gridSize;
     }
+
+    //set color as you want that explored waypoint (homework)
+    //neighbor.SetTopColor(Color.black);
 
     public Vector2Int GetGridPos()
     {
