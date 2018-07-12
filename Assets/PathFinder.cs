@@ -9,7 +9,7 @@ public class PathFinder : MonoBehaviour {
     Queue<Waypoint> queue = new Queue<Waypoint>();
 
     [SerializeField] Waypoint startWaypoint, endWaypoint;
-    bool isRunning = true; //todo private later
+    bool isRunning = true;
     List<Waypoint> path = new List<Waypoint>();
     Waypoint searchCenter;
     Vector2Int[] directions = { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
