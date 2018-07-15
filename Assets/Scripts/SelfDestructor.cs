@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : MonoBehaviour {
-    [SerializeField] Transform objectToPan;
-    [SerializeField] Transform targetEnemy;
-	 
+public class SelfDestructor : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
-        
+        Destroy(gameObject, 0.5f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        objectToPan.LookAt(targetEnemy);
+		
 	}
 }
