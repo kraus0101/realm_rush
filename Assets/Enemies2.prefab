@@ -9,36 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1404321910642576}
+  m_RootGameObject: {fileID: 1421205913432746}
   m_IsPrefabParent: 1
---- !u!1 &1404321910642576
+--- !u!1 &1170630768191658
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4691472897651328}
-  - component: {fileID: 54096954330558516}
-  - component: {fileID: 114980907484096904}
-  m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1997617808786196
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4220823666948354}
-  - component: {fileID: 33446387388826232}
-  - component: {fileID: 23829598374399942}
-  - component: {fileID: 65939773497930056}
+  - component: {fileID: 4591805559857744}
+  - component: {fileID: 33225002754483296}
+  - component: {fileID: 23239294198503020}
+  - component: {fileID: 65855139513446150}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -46,39 +29,58 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4220823666948354
+--- !u!1 &1421205913432746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4649869744381102}
+  - component: {fileID: 54274296433098140}
+  - component: {fileID: 114207998234240724}
+  - component: {fileID: 114801071914856376}
+  - component: {fileID: 65989593916264488}
+  m_Layer: 0
+  m_Name: Enemies2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4591805559857744
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1997617808786196}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_GameObject: {fileID: 1170630768191658}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -10, y: 4, z: 0}
+  m_LocalScale: {x: 0.40000024, y: 0.4, z: 0.40000024}
   m_Children: []
-  m_Father: {fileID: 4691472897651328}
+  m_Father: {fileID: 4649869744381102}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!4 &4691472897651328
+--- !u!4 &4649869744381102
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404321910642576}
+  m_GameObject: {fileID: 1421205913432746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4220823666948354}
+  - {fileID: 4591805559857744}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23829598374399942
+--- !u!23 &23239294198503020
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1997617808786196}
+  m_GameObject: {fileID: 1170630768191658}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -107,19 +109,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33446387388826232
+--- !u!33 &33225002754483296
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1997617808786196}
+  m_GameObject: {fileID: 1170630768191658}
   m_Mesh: {fileID: 4300000, guid: 042c32b34794f584aa882ba5397f2c19, type: 3}
---- !u!54 &54096954330558516
+--- !u!54 &54274296433098140
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404321910642576}
+  m_GameObject: {fileID: 1421205913432746}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -129,29 +131,52 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65939773497930056
+--- !u!65 &65855139513446150
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1997617808786196}
+  m_GameObject: {fileID: 1170630768191658}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 15.000004, y: 14, z: 13.000003}
   m_Center: {x: 0, y: 7, z: 0}
---- !u!114 &114980907484096904
+--- !u!65 &65989593916264488
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1421205913432746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114207998234240724
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404321910642576}
+  m_GameObject: {fileID: 1421205913432746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908e16f802bc44a5c9911c557f609d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathFX: {fileID: 1976101769341440, guid: 6145971a1eea241ecafe151dc4e79cf8, type: 2}
+  parent: {fileID: 0}
+  hits: 10
+--- !u!114 &114801071914856376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1421205913432746}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb3313575be6041e582b89cf2a577832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathFX: {fileID: 1976101769341440, guid: 6145971a1eea241ecafe151dc4e79cf8, type: 2}
-  parent: {fileID: 0}
-  hits: 3
