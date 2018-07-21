@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour {
     [SerializeField] GameObject deathFX;
     [SerializeField] Transform parent;
-    [SerializeField] int hits = 10;
+    [SerializeField] int hitPoints = 10;
     //[SerializeField]Collider collisionMesh;
 
 
@@ -17,9 +17,6 @@ public class EnemyDamage : MonoBehaviour {
 		
 	}
 
-    //void OnCollisionEnter() {
-    //  print("I am hit!");
-    //}
 
     private void AddBoxCollider()
     {
@@ -29,12 +26,17 @@ public class EnemyDamage : MonoBehaviour {
 
     private void OnParticleCollision(GameObject other)
     {
-        //print("I am hit!");
-        hits = hits - 1;
-        if (hits<1) {
+        ProcessHits();
+        if (hitPoints < 1)
+        {
             KillEnemy();
         }
+    }
 
+    private void ProcessHits()
+    {
+        hitPoints = hitPoints - 1;
+        print("hit points are " + hitPoints);
     }
 
     private void KillEnemy()

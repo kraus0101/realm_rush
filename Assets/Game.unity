@@ -778,7 +778,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4213343224745340, guid: 2dfab8d59b7d946baacd375d213c8c0e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10.3
+      value: 40.3
       objectReference: {fileID: 0}
     - target: {fileID: 4213343224745340, guid: 2dfab8d59b7d946baacd375d213c8c0e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2128,7 +2128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1976101769341440, guid: 6145971a1eea241ecafe151dc4e79cf8, type: 2}
   parent: {fileID: 1986913061}
-  hits: 40
+  hitPoints: 20
 --- !u!1001 &1302718248
 Prefab:
   m_ObjectHideFlags: 0
@@ -2256,7 +2256,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4213343224745340, guid: 2dfab8d59b7d946baacd375d213c8c0e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 20.3
+      value: 40.3
       objectReference: {fileID: 0}
     - target: {fileID: 4213343224745340, guid: 2dfab8d59b7d946baacd375d213c8c0e, type: 2}
       propertyPath: m_LocalPosition.y
