@@ -36,7 +36,6 @@ public class EnemyDamage : MonoBehaviour {
     private void ProcessHits()
     {
         hitPoints = hitPoints - 1;
-        print("hit points are " + hitPoints);
     }
 
     private void KillEnemy()
@@ -44,6 +43,5 @@ public class EnemyDamage : MonoBehaviour {
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
         Destroy(gameObject);
-        print("Enemy is killed");//todo remove log
     }
 }
