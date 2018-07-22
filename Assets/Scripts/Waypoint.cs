@@ -8,6 +8,7 @@ public class Waypoint : MonoBehaviour {
     //public ok here as is a data class
     public bool isExplored = false;
     public Waypoint exploredFrom;
+    public bool isPlaceable = true;
 
     Vector2Int girdPos;
 
@@ -27,6 +28,17 @@ public class Waypoint : MonoBehaviour {
     }
     void OnMouseOver()
     {
-        Debug.Log(gameObject.name);
+        if (Input.GetMouseButtonDown(0)) //left mouse click
+        {
+            if (isPlaceable)
+            {
+                print(gameObject.name + " is placed");
+
+            }
+            else 
+            {
+                print("it can't be place");
+            }
+        }
     }
 }
