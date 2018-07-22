@@ -47,11 +47,9 @@ public class Tower : MonoBehaviour {
 
         if (distToA < distToB)
         {
-            print("first is the closest!");
             return transformA;
 
         }
-        print("other one is closest!");
         return transformB;
     }
 

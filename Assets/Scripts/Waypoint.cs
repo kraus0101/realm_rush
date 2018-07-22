@@ -18,9 +18,6 @@ public class Waypoint : MonoBehaviour {
         return gridSize;
     }
 
-    //set color as you want that explored waypoint (homework)
-    //neighbor.SetTopColor(Color.black);
-
     public Vector2Int GetGridPos()
     {
         return new Vector2Int (
@@ -28,10 +25,8 @@ public class Waypoint : MonoBehaviour {
             Mathf.RoundToInt(transform.position.z / gridSize)
         );
     }
-    public void SetTopColor(Color color)
-    {   
-        MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
-        topMeshRenderer.material.color = color;
-   
+    void OnMouseOver()
+    {
+        Debug.Log(gameObject.name);
     }
 }
