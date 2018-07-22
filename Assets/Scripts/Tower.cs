@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class Tower : MonoBehaviour {
+    //paremeter
     [SerializeField] Transform objectToPan;
-    [SerializeField] Transform targetEnemy;
     [SerializeField] ParticleSystem particleProjectile;
     [SerializeField] float attackRange = 10f;
 
+    //state
+    Transform targetEnemy;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +16,7 @@ public class Tower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        SetTargetEnemy();
         if (targetEnemy)
         {
             objectToPan.LookAt(targetEnemy);
@@ -25,10 +27,38 @@ public class Tower : MonoBehaviour {
         }
 	}
 
+    private void SetTargetEnemy()
+    {
+        var sceneEnemies = FindObjectsOfType<EnemyDamage>();
+        if (sceneEnemies.Length == 0) { return; }
+
+        Transform closestEnemy = sceneEnemies[0].transform;
+        foreach (EnemyDamage testEnemy in sceneEnemies)
+        {
+            closestEnemy = GetClosest(closestEnemy, testEnemy.transform);
+        }
+        targetEnemy = closestEnemy;
+    }
+
+    private Transform GetClosest(Transform transformA, Transform transformB)
+    {
+        var distToA = Vector3.Distance(transform.position, transformA.position);
+        var distToB = Vector3.Distance(transform.position,transformB.position);
+
+        if (distToA < distToB)
+        {
+            print("first is the closest!");
+            return transformA;
+
+        }
+        print("other one is closest!");
+        return transformB;
+    }
+
     private void CheckEnemyDistance(){
         
-        float enemyDistance = Vector3.Distance(targetEnemy.position, gameObject.transform.position);
-        if (enemyDistance < attackRange) {
+        float distanceToEnemy = Vector3.Distance(targetEnemy.position, gameObject.transform.position);
+        if (distanceToEnemy <= attackRange) {
             SetGunsActive(true);
         }
         else {

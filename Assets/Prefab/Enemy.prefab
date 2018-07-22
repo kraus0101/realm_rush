@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4691472897651328}
   - component: {fileID: 54096954330558516}
   - component: {fileID: 114980907484096904}
+  - component: {fileID: 114758179100274874}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -65,7 +66,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404321910642576}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -141,6 +142,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15.000004, y: 14, z: 13.000003}
   m_Center: {x: 0, y: 7, z: 0}
+--- !u!114 &114758179100274874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404321910642576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908e16f802bc44a5c9911c557f609d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathFX: {fileID: 1976101769341440, guid: 6145971a1eea241ecafe151dc4e79cf8, type: 2}
+  parent: {fileID: 0}
+  hitPoints: 40
 --- !u!114 &114980907484096904
 MonoBehaviour:
   m_ObjectHideFlags: 1
