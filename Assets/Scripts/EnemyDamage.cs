@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
-    [SerializeField] GameObject deathFX;
-    [SerializeField] Transform parent;
+    //[SerializeField] Transform parent;
     [SerializeField] int hitPoints = 10;
-    //[SerializeField]Collider collisionMesh;
+    [SerializeField] ParticleSystem hitParticlePrefab;
+    [SerializeField] ParticleSystem deathFX;
 
 
 	// Use this for initialization
@@ -27,7 +27,7 @@ public class EnemyDamage : MonoBehaviour {
     private void OnParticleCollision(GameObject other)
     {
         ProcessHits();
-        if (hitPoints < 1)
+        if (hitPoints <= 1)
         {
             KillEnemy();
         }
@@ -36,12 +36,14 @@ public class EnemyDamage : MonoBehaviour {
     private void ProcessHits()
     {
         hitPoints = hitPoints - 1;
+        hitParticlePrefab.Play();
     }
 
     private void KillEnemy()
     {
-        GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
-        fx.transform.parent = parent;
+        var fx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        fx.Play();
+        //fx.transform.parent = parent;
         Destroy(gameObject);
     }
 }
