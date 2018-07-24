@@ -5,24 +5,16 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
     //[SerializeField] Transform parent;
+    [SerializeField] Collider collisionMesh;
     [SerializeField] int hitPoints = 10;
     [SerializeField] ParticleSystem hitParticlePrefab;
-    [SerializeField] ParticleSystem deathFX;
+    [SerializeField] ParticleSystem deathParticlePrefab;
 
 
 	// Use this for initialization
 	void Start () {
-        AddBoxCollider();
-        OnParticleCollision(gameObject);
 		
 	}
-
-
-    private void AddBoxCollider()
-    {
-        Collider boxCollider = gameObject.AddComponent<BoxCollider>();
-        boxCollider.isTrigger = false;
-    }
 
     private void OnParticleCollision(GameObject other)
     {
@@ -41,8 +33,8 @@ public class EnemyDamage : MonoBehaviour {
 
     private void KillEnemy()
     {
-        var fx = Instantiate(deathFX, transform.position, Quaternion.identity);
-        fx.Play();
+        var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+        vfx.Play();
         //fx.transform.parent = parent;
         Destroy(gameObject);
     }
