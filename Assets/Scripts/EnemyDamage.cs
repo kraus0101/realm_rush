@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
-    //[SerializeField] Transform parent;
+    
     [SerializeField] Collider collisionMesh;
     [SerializeField] int hitPoints = 10;
     [SerializeField] ParticleSystem hitParticlePrefab;
@@ -35,7 +35,8 @@ public class EnemyDamage : MonoBehaviour {
     {
         var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
-        //fx.transform.parent = parent;
+
+        Destroy(vfx.gameObject,vfx.main.duration);
         Destroy(gameObject);
     }
 }
