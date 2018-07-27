@@ -10,6 +10,8 @@ public class Waypoint : MonoBehaviour {
     public Waypoint exploredFrom;
     public bool isPlaceable = true;
 
+    public Waypoint baseWaypoint;
+
     Vector2Int girdPos;
 
     const int gridSize = 10;
