@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd386ef5edc9041e6a61e6a1db0f123e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenSpawns: 2
+  secondsBetweenSpawns: 0.75
   enemyPrefab: {fileID: 114932107997174006, guid: 04f81ff9814844ccfa08226f8d46a3f4,
     type: 2}
   enemyParentTransform: {fileID: 750203920}
