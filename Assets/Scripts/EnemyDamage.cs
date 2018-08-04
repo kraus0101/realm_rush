@@ -32,14 +32,16 @@ public class EnemyDamage : MonoBehaviour {
         hitPoints = hitPoints - 1;
         hitParticlePrefab.Play();
         myAudioSource.PlayOneShot(enemyHitSFX);
+
     }
 
     private void KillEnemy()
     {
         var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
-
         Destroy(vfx.gameObject, vfx.main.duration);
+        AudioSource.PlayClipAtPoint(enemyDeathSFX, Camera.main.transform.position);
+
         Destroy(gameObject);
     }
 }
